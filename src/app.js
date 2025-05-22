@@ -12,7 +12,7 @@ const copyFile = async () => {
     }
 
     if (sourceFile === newFileName) {
-      return;
+      throw new Error('Source and destination paths are the same');
     }
 
     await fsPromises.copyFile(sourceFile, newFileName);
